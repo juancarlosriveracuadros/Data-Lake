@@ -1,12 +1,12 @@
 # Data-Lake
-the program is a database for a music streaming startup Sparkify. The data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app. The program is an ETL pipeline in PySpark code.
+Data-Lake is a database for the music streaming startup company Sparkify. The data is a collection of songs and user activities on their new music streaming app. The goal of the program is to understand what songs users are listening to. The information comes from two JSON directories the datasets are in S3 AWS. The program is a database code in PySpark with tables designed to optimize queries on song play analysis and an ETL pipeline.
 
 ## Dataset
 the datasets reside in S3. Here are the S3 links for each:
 
 Song data: s3://udacity-dend/song_data
 
-Log data: s3://udacity-dend/log_data
+Long data: s3://udacity-dend/log_data
 
 ### Song Dataset
 The first dataset is a subset of real data from the Million Song Dataset. Each file is in JSON format and contains metadata about a song and the artist of that song.
@@ -47,3 +47,27 @@ status,
 ts, 
 userAgent, 
 userId
+
+## Tables data base in Posgres
+Basic Table (Data from S3 aws) staging_song, staging_events 
+1) Song Data:   s3://udacity-dend/song_data
+   staging_song: num_songs, artist_id, artist_latitude, artist_longitude, artist_location, artist_name, song_id, title, duration, year
+   
+2) Log Data:    s3://udacity-dend/log_data
+   staging_events: staging_event_key, artist, auth, firstName, gender, iteminSession, lastName, length, level, location, method, page =   Next Song,    registration, sessionId, song, status, ts, userAgent, userId  
+it will be only load the row if page = NextSong
+
+### Dimension Table
+Data from Song Dataset as staging_song (song_table, artist_table)
+1) song_table: song_id, title, artist_id, year, duration
+2) artist_table: artist_id, artist_name, artist_location, artist_latitude, artist_longitude
+
+Data from Log Dataset as staging_events (time_table, users) + NextSong
+1) time_table: start_time, hour, day, week, month, year, weekday
+2) users: userId, firstName, lastName, gender, level
+
+### Fact Table 
+JOIN beteween staging_song und staging_events (songplay)
+songplay:  songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
+
+## Program description steps (etl.py)
