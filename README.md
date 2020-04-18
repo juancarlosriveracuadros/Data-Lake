@@ -75,3 +75,6 @@ etl.py
     1.1) connect to datawarehouse and SQL database
     1.2) copy the information of the two S3 AWS datasets into SQL tables (staging_song, staging_events(page=NextSong)) with the function load_staging_tables
     1.3) load the information from the staging tables into the fact and dim tables
+
+## dhw.cfg
+in the file dhw is the information about the AWS cluster in redschift and the AIM role. The path from the S3-buckets are in this file as well
