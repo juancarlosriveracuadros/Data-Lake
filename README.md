@@ -5,6 +5,7 @@ the program is a database for a music streaming startup Sparkify. The data resid
 the datasets reside in S3. Here are the S3 links for each:
 
 Song data: s3://udacity-dend/song_data
+
 Log data: s3://udacity-dend/log_data
 
 ### Song Dataset
