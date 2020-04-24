@@ -7,7 +7,6 @@ Data-Lake is a database for the music streaming startup company Sparkify. The da
 **Data Lake Architecture**\
 \
 ![focus](imagines_DLake/Project_Architecture_Data_Lake.png)\
-\
 ## JSON directories (Start Dataset)
 **Song Dataset**\
 The first dataset is a subset of real data from the Million Song Dataset. Each file is in JSON format and contains metadata about a song and the artist of that song.\
