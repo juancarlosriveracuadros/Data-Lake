@@ -1,5 +1,8 @@
 # Data-Lake
-Data-Lake is a database for the music streaming startup company Sparkify. The data is a collection of songs and user activities on their new music streaming app. The goal of the program is to understand what songs users are listening to. The information comes from two JSON directories the datasets are in S3 AWS. The program is a database code in PySpark with tables designed to optimize queries on song play analysis and an ETL pipeline.
+Data-Lake is a database for the music streaming startup company Sparkify. The data is a collection of songs and user activities on their new music streaming app. The goal of the program is to understand what songs users are listening to. The information comes from two JSON directories the datasets are in S3 AWS. The program is a database code in PySpark with tables designed to optimize queries on song play analysis and an ETL pipeline.\
+\
+**ETL explanation**
+![focus](imagines_DWH/ETL.png)\
 
 ## Dataset
 the datasets reside in S3. Here are the S3 links for each:
