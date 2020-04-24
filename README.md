@@ -1,8 +1,8 @@
 # Data-Lake
-Data-Lake is a database for the music streaming startup company Sparkify. The data is a collection of songs and user activities on their new music streaming app. The goal of the program is to understand what songs users are listening to. The information comes from two JSON directories the datasets are in S3 AWS. The program is a database code in PySpark with tables designed to optimize queries on song play analysis and an ETL pipeline.\
-\
+Data-Lake is a database for the music streaming startup company Sparkify. The data is a collection of songs and user activities on their new music streaming app. The goal of the program is to understand what songs users are listening to. The information comes from two JSON directories the datasets are in S3 AWS. The program is a database code in PySpark with tables designed to optimize queries on song play analysis and an ETL pipeline.
+
 **ETL explanation**
-![focus](imagines_DWH/ETL.png)\
+![focus](imagines_DLake/ETL.png)\
 
 ## Dataset
 the datasets reside in S3. Here are the S3 links for each:
@@ -51,8 +51,8 @@ ts,
 userAgent, 
 userId
 
-## Tables data base in Posgres
-Basic Table (Data from S3 aws) staging_song, staging_events 
+## Tables data in Spark
+Basic Table (Data from S3 AWS) staging_song, staging_events 
 1) Song Data:   s3://udacity-dend/song_data
    staging_song: num_songs, artist_id, artist_latitude, artist_longitude, artist_location, artist_name, song_id, title, duration, year
    
@@ -72,6 +72,7 @@ Data from Log Dataset as staging_events (time_table, users) + NextSong
 ### Fact Table 
 JOIN beteween staging_song und staging_events (songplay)
 songplay:  songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
+
 
 ## Program description steps (etl.py)
 etl.py is the only skript of this program and create the dimension and fact tables from the two dataset and load the informatio on a S3 folder:
