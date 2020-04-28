@@ -62,7 +62,7 @@ etl.py is the only skript of this program and create the dimension and fact tabl
     2.7) extract from df the columns that correspond to time_table as dataframe\
     2.8) save time_table as parquet format in S3\
     2.9) join between the tables df und songs_table in the column song_df.title == df.song. The columns for songplay table are extracted in a dataframe\
-    2.10) save songplay_table as parquet in S3\
+    2.10) save songplay_table as parquet in S3
 
 
 
