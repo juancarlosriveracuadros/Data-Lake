@@ -5,6 +5,7 @@ Data-Lake is a database for the music streaming startup company Sparkify. The da
 ![focus](imagines_DLake/ETL.png)\
 \
 **Data Lake Architecture**\
+The architecture was made in AWS and consists of a EMR parallelised cluster group. the clusters accesses two S3 folders and loads 2 JSON dataset. From the 2 datasets the dim. and fac. tables are created and loaded in other S3 folder.\
 \
 ![focus](imagines_DLake/Project_Architecture_Data_Lake.png)
 
