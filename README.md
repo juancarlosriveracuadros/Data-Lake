@@ -24,7 +24,7 @@ It will be only load the row if page = NextSong\
 
 
 **Dimension Table**\
-folder path: 's3a://datalakeeu/'
+folder path: 's3a://datalakeeu/'\
 -Data from Song Dataset (song_table, artist_table)
 1) song_table: song_id, title, artist_id, year, duration
 2) artist_table: artist_id, artist_name, artist_location, artist_latitude, artist_longitude
@@ -34,7 +34,7 @@ folder path: 's3a://datalakeeu/'
 2) users: userId, firstName, lastName, gender, level
 
 **Fact Table**\
-folder path: 's3a://datalakeeu/'
+folder path: 's3a://datalakeeu/'\
 JOIN beteween Song Dataset und Long Dataset (songplay)\
 songplay:  songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent\
 
