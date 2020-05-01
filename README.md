@@ -45,14 +45,14 @@ songplay:  songplay_id, start_time, user_id, level, song_id, artist_id, session_
 ## Program description steps (etl.py)
 etl.py is the only skript of this program and create the dimension and fact tables from the two dataset and load the informatio on a S3 folder. The skript hast two functions process_song_data and process_log_data. The program conect to spark afert the conection run the two programs first process_song_data, second process_log_data. 
 
-**1) process_song_data.py**\
+**1) def process_song_data()**\
     1.1) read song data as dataframe (df)\
     1.2) extract from df the columns that correspond to songs_table as dataframe\
     1.3) save songs_table as parquet format in S3\
     1.4) extract from df the columns that correspond to artist_table as dataframe\
     1.5) save artist_table as partque format in S3
 
-**2) process_log_data.py**\
+**2) def process_log_data()**\
     2.1) read log data as dataframe (df)\
     2.2) filter the data frame with column page have to be NextSong\
     2.3) extract from df the columns that correspond to users_table as dataframe\
